@@ -2,7 +2,6 @@ package com.example.sneakpeak.Utils;
 
 import com.example.sneakpeak.Entity.User;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
@@ -26,7 +25,7 @@ public class JWTUtils {
 
         //Claims created
         Claims claims = Jwts.claims().setIssuer(user.getId().toString()).setIssuedAt(issuedAt).setExpiration(expiryAt);
-        claims.put("emailId",user.getEmailId());
+        claims.put("emailId",user.getEmail());
         claims.put("fullName",user.getName());
 
         //jwt generate using claims

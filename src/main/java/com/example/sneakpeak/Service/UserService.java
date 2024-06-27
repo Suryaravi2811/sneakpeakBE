@@ -8,10 +8,8 @@ import com.example.sneakpeak.Utils.JWTUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -27,14 +25,14 @@ public class UserService {
         User user = new User();
         user.setId(userDTO.getId());
         user.setName(userDTO.getName());
-        user.setEmailId(userDTO.getEmailId());
+        user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
         userRepository.save(user);
         return "Registered Successfully";
     }
 
     public Map<String,Object> login(UserRequestDTO userRequestDTO) {
-        User user = userRepository.findOneByEmailIdIgnoreCaseAndPassword(userRequestDTO.getEmailId(),userRequestDTO.getPassword());
+        User user = userRepository.findOneByEmailIgnoreCaseAndPassword(userRequestDTO.getEmail(),userRequestDTO.getPassword());
         if (user == null){
             String response="Login failed";
             Map<String ,Object> responseData= new HashMap<>();

@@ -1,6 +1,5 @@
 package com.example.sneakpeak;
 
-import com.example.sneakpeak.Entity.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
