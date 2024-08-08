@@ -1,9 +1,0 @@
-
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îõ¿Îÿÿÿÿÿ8µáŸÀ…2J$53abe49e-a342-4612-ae11-f055e9c222bb
-k
-java:S5411t"(Use a primitive boolean expression here.(ğøŠ€8õ¢¶Á…2J$83fa2f72-bee2-4664-9da8-9dd1fe3f4548
-	java:S112^"FDefine and throw a dedicated exception instead of using a generic one.(Ê“Åıÿÿÿÿ8ø¢¶Á…2J$cb3b18e0-11fa-4740-9572-5ace6319dbf0
-	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(Ê“Åıÿÿÿÿ8ø¢¶Á…2J$b347df0c-984f-4b50-bf1a-d1bdd4cc4198
-y
-java:S2696"6Make the enclosing method "static" or remove this set.(­‹§8½áŸÀ…2J$82f92d38-830f-493c-916d-d221da3b5a0b
-ƒ	java:S125"<This block of commented-out lines of code should be removed.(ƒÌ„ˆúÿÿÿÿ8¨¢²Á…2J$469799af-8f51-48aa-99c0-a5222b29a7a4

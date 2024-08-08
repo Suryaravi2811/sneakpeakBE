@@ -1,0 +1,144 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:9.0.1
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 9025107347
+      MYSQL_USER: sneakpeakadmin
+      MYSQL_PASSWORD: 9025107347
+      MYSQL_DATABASE: sneakpeak
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend
+
+  app:
+    image: sneakpeakbackend:latest  # Replace with your Spring Boot image name
+    ports:
+      - '8080:8080'  # Mapping host port 8080 to container port 8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/sneakpeak
+      SPRING_DATASOURCE_USERNAME: sneakpeakadmin
+      SPRING_DATASOURCE_PASSWORD: 9025107347
+    depends_on:
+      - db
+    networks:
+      - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:
+
+
+
+
+#version: '3.8'
+#services:
+#  db:
+#    image: mysql:9.0.1
+#    ports:
+#      - '3307:3306'
+#    environment:
+#      MYSQL_ROOT_PASSWORD: 9025107347
+#      MYSQL_USER: sneakpeakadmin
+#      MYSQL_PASSWORD: 9025107347
+#      MYSQL_DATABASE: sneakpeak
+
+
+
+
+#version: "3.7"
+#services:
+#  api_service:
+#    build: .
+#  mysqldb:
+#    image: "mysql:8.0"
+#    ports:
+#      - 3307:3306  # Mapping container port 3306 to host port 3307 (optional)
+#    networks:
+#      - springapimysql-net
+#    environment:
+#      MYSQL_DATABASE: sneakpeak
+#      MYSQL_ROOT_PASSWORD: Sneakpeak@Database  # Replace with a strong password
+#    volumes:
+#      - mysqldb_data:/var/lib/mysql  # Optional volume for persistence
+#
+#networks:
+#  springapimysql-net:
+#
+#volumes:
+#  mysqldb_data:  # Optional volume for persistence
+#
+#
+
+
+
+#version: "3"
+#services:
+#  mysqldb:
+#    container_name: mysqldb
+#    image: mysql
+#    ports:
+#      - "3307:3306"
+#    volumes:
+#      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#    environment:
+#      MYSQL_DATABASE: sneakpeak
+#      MYSQL_ROOT_PASSWORD: 9025107347
+#      MYSQL_PASSWORD: 9025107347
+#    healthcheck:
+#      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p 9025107347"]
+#      timeout: 20s
+#      retries: 10
+#
+#
+#  springboot-app:
+#    container_name: spring-app
+#    image: springboot-app
+#    restart: on-failure
+#    build: .
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      MYSQL_HOST: mysqldb
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: 9025107347
+#      MYSQL_PORT: 3306    # we are in same network so we connect internally.
+#    depends_on:
+#      mysqldb:
+#        condition: service_healthy
+
+
+#version: "3.7"
+#services:
+#  api_service:
+#    build: .
+#    ports:
+#      - 8080:8080
+#    networks:
+#      - springapimysql-net
+#    environment:
+#      - spring.datasource.url=jdbc:mysql://mysqldb:3306/basics?allowPublicKeyRetrieval=true
+#    depends_on:
+#      - mysqldb
+#
+#    volumes:
+#      - .m2:/root/.m2
+#
+#  mysqldb:
+#    image: "mysql:8.0"
+#    ports:
+#      - 3307:3306
+#    networks:
+#      - springapimysql-net
+#    environment:
+#      MYSQL_DATABASE: sneakpeak
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: 9025107347
+#      MYSQL_ROOT_PASSWORD: 9025107347
+#networks:
+#  springapimysql-net:

@@ -1,8 +1,5 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(­¾‹
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
-h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ï¤ûÿÿÿÿÿ
-g
-java:S1128
-"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(­¾‹J$30544df5-996d-4062-a103-8ac7382076b4
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$8c51591b-2ea3-497b-aab3-a51ded48544d
+	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ï¤ûÿÿÿÿÿJ$51890530-c10f-466f-be92-6bab2ca9d362
